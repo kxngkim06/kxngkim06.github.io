@@ -14,3 +14,8 @@ const fl=document.createElement("link");fl.rel="stylesheet";fl.href="https://fon
 const ft=document.createElement("footer");ft.className="ft";ft.innerHTML='<b>kxngkim06@gmail.com</b><a href="https://linkedin.com/in/kanghyunkim-ee">LinkedIn</a><a href="resume.pdf">Resume</a><p>2026 Kanghyun Kim. Electrical Engineering, Georgia Tech.</p>';mn.append(ft);
 
 mn.id="main";const sk=document.createElement("a");sk.className="skip";sk.href="#main";sk.textContent="Skip to content";document.body.prepend(sk);
+
+const rt=document.documentElement;let th="light";try{th=localStorage.getItem("th")||"light"}catch(e){}
+const tg=document.createElement("button");tg.className="tg";
+const setT=v=>{rt.dataset.theme=v;tg.textContent=v==="dark"?"Switch to light":"Switch to dark";tg.setAttribute("aria-pressed",v==="dark");try{localStorage.setItem("th",v)}catch(e){}};
+tg.onclick=()=>setT(rt.dataset.theme==="dark"?"light":"dark");nav.append(tg);setT(th);
