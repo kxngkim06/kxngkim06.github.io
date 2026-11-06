@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital SAT Math Performance Analyzer | Kanghyun Kim</title><link rel="stylesheet" href="style.css"></head><body><main>
+<span class="sticker">Live demo</span>
+<h1>Digital SAT Math Performance Analyzer</h1>
+<p class="meta">Personal project for my SAT tutoring | Built with AI assistance</p>
+<p class="acts"><a class="btn" href="sat-analyzer/" target="_blank" rel="noopener">Open the demo &#8599;</a></p>
+<figure><img src="images/analyzer.jpg" alt="Screenshot of the SAT Math Performance Analyzer"><figcaption>The analyzer running on made-up demo data</figcaption></figure>
+<h2>The problem</h2>
+<p>I tutor SAT Math, and my students take practice exams in Google Forms. Turning those answers into feedback was slow. I copied each student's results into Excel by hand, converted the raw score to an SAT score, and then went through every student's answers to see which topics they got right or wrong. For a class of 15 students, this took about three hours.</p>
+<h2>The idea</h2>
+<p>The slow part was repetitive: matching every answer to its topic. So I prepared a file for each exam that lists the topic of every question. The tool compares that file with the CSV exported from Google Forms, so the matching happens automatically instead of by eye.</p>
+<h2>What it does</h2>
+<p>I upload the topic file and the students' results. The analyzer then shows each student's result and the whole class's result at once, including an estimated SAT score and which of the 16 SAT Math skill areas are strong or weak. It also draws a chart of how many students got each question right and a chart ranking the students. For every student it can produce a PDF report that I hand out.</p>
+<h2>The result</h2>
+<p>What used to take about three hours for a class of 15 now takes about five minutes. With their own report in hand, students better understood which topics were weak and how to prepare for them. One cohort that received these reports raised its average SAT Math score from 633.2 to 734.4. Many things go into a gain like that, so I can't credit the tool alone, but I think the reports helped.</p>
+<h2>How I built it</h2>
+<p>I defined the problem, prepared the topic files, and decided how the results should look. I built the tool with AI assistance. It is a single web page, so there is nothing to install. I use the real version for my own classes, and the demo runs on made-up students and scores so anyone can try it.</p>
+</main><script src="script.js"></script></body></html>

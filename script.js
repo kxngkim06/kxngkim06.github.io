@@ -1,4 +1,4 @@
-const pages=[["index.html","Home"],["about.html","About me"],["resume.pdf","Resume ↗"],["goals.html","Career goals"],["projects.html","Projects"],["open-wake-switch.html","Open Wake Switch","sub"],["mini-rover.html","Mini Rover","sub"],["experience.html","Experience"],["skills.html","Skills"],["coursework.html","Course work"],["contact.html","Contact"]];
+const pages=[["index.html","Home"],["about.html","About me"],["resume.pdf","Resume ↗"],["goals.html","Career goals"],["projects.html","Projects"],["open-wake-switch.html","Open Wake Switch","sub"],["mini-rover.html","Mini Rover","sub"],["sat-math-analyzer.html","SAT Analyzer","sub"],["experience.html","Experience"],["skills.html","Skills"],["coursework.html","Course work"],["contact.html","Contact"]];
 const here=location.pathname.split("/").pop()||"index.html";
 const nav=document.createElement("nav");nav.className="side";nav.id="nav";nav.setAttribute("aria-label","Main");
 nav.innerHTML="<b>Kanghyun Kim<i>.</i></b>"+pages.map(([h,t,c])=>`<a href="${h}" class="${c||""} ${h===here?"on":""}">${t}</a>`).join("");
