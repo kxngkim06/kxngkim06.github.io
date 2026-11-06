@@ -12,3 +12,5 @@ const mn=document.querySelector("main"),cv=document.createElement("div"),ie=docu
 
 const fl=document.createElement("link");fl.rel="stylesheet";fl.href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap";document.head.appendChild(fl);
 const ft=document.createElement("footer");ft.className="ft";ft.innerHTML='<b>kxngkim06@gmail.com</b><a href="https://linkedin.com/in/kanghyunkim-ee">LinkedIn</a><a href="resume.pdf">Resume</a><p>2026 Kanghyun Kim. Electrical Engineering, Georgia Tech.</p>';mn.append(ft);
+
+mn.id="main";const sk=document.createElement("a");sk.className="skip";sk.href="#main";sk.textContent="Skip to content";document.body.prepend(sk);
