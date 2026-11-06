@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open Wake Switch | Kanghyun Kim</title><link rel="stylesheet" href="style.css"></head><body><main>
+<h1>Open Wake Switch</h1>
+<p class="meta">ECE Discovery Project, in progress</p>
+<figure><img src="images/ows-1.jpg" alt="Open Wake Switch prototype on a breadboard"><figcaption>ESP32 and servo prototype (photo by me)</figcaption></figure>
+<h2>The problem</h2>
+<p>I wanted a light that turns on by itself at a set time in the morning. Smart switches do this, but they mean removing the wall switch and handling the wiring behind it. I wanted a device that leaves the wall untouched and simply presses the existing switch with a servo, so it could work in any room without electrical work.</p>
+<h2>The process</h2>
+<p>I started with an ESP32-WROVER board and a small servo, programmed in the Arduino IDE. The servo signal comes from GPIO18. My first goal was simple: a test sketch that rotates the servo 30 degrees every second, with serial output so I could watch what the board was doing.</p>
+<p>That test taught me the most. The serial monitor showed the sketch running, but the servo wasn't moving. Because the code looked correct, I first assumed the board was the problem. Instead of rewriting code, I connected the servo directly to the ESP32 pins with jumper wires, skipping the breadboard. It moved immediately. The fault was a bad connection on the breadboard, which serial output could never have revealed.</p>
+<figure><img src="images/ows-2.jpg" alt="Servo wired directly to the ESP32"><figcaption>Direct connection used to isolate the fault (photo by me)</figcaption></figure>
+<p>In parallel, I looked at the mechanical side. I examined the screws on the switch cover and I'm designing a removable bracket that holds the servo in place, so the device can be attached and taken off without damaging the wall plate.</p>
+<h2>The outcome so far</h2>
+<p>The servo now runs reliably in the prototype, and I've confirmed the wiring and the control pin. The lesson is one I expect to reuse often: when software and hardware disagree, test the hardware directly before changing the code.</p>
+<h2>What's next</h2>
+<p>Still to do: add time-based scheduling so the servo moves at a chosen morning time, finish the mounting bracket, test it on a real wall switch, and run repeated trials to measure reliability. I'll update this page as each piece is finished.</p>
+
+</main><script src="script.js"></script></body></html>
