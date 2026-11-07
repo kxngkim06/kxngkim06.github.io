@@ -1,12 +1,13 @@
-const pages=[["index.html","Home"],["about.html","About me"],["resume.pdf","Resume ↗"],["goals.html","Career goals"],["projects.html","Projects"],["open-wake-switch.html","Open Wake Switch","sub"],["mini-rover.html","Mini Rover","sub"],["sat-math-analyzer.html","SAT Analyzer","sub"],["experience.html","Experience"],["skills.html","Skills"],["coursework.html","Course work"],["contact.html","Contact"]];
+const pages=[["index.html","Home"],["about.html","About me"],["goals.html","Career goals"],["projects.html","Projects"],["experience.html","Experience"],["skills.html","Skills"],["coursework.html","Course work"],["contact.html","Contact"]];
 const here=location.pathname.split("/").pop()||"index.html";
 const nav=document.createElement("nav");nav.className="side";nav.id="nav";nav.setAttribute("aria-label","Main");
-nav.innerHTML="<b>Kanghyun Kim<i>.</i></b>"+pages.map(([h,t,c])=>`<a href="${h}" class="${c||""} ${h===here?"on":""}">${t}</a>`).join("");
+nav.innerHTML="<b>Kanghyun Kim<i>.</i></b>"+pages.map(([h,t,c])=>`<a href="${h}" class="${c||""} ${h===here||(h==="projects.html"&&/open-wake|mini-rover|sat-math/.test(here))?"on":""}">${t}</a>`).join("");
+nav.insertAdjacentHTML("beforeend",'<a class="dl" href="resume.pdf" target="_blank" rel="noopener">Download resume &#8599;</a>');
 nav.querySelectorAll('a[href$=".pdf"]').forEach(a=>{a.target="_blank";a.rel="noopener"});
 const mb=document.createElement("button");mb.id="mb";mb.textContent="Menu";mb.setAttribute("aria-controls","nav");
 mb.onclick=()=>{const o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o)};
 document.body.prepend(nav);document.body.prepend(mb);
-document.querySelectorAll("img").forEach(i=>i.addEventListener("error",()=>{const d=document.createElement("div");d.className="ph";d.textContent="Add image: "+i.getAttribute("src");i.replaceWith(d)}));
+document.querySelectorAll("img").forEach(i=>i.addEventListener("error",()=>{const d=document.createElement("div");d.className="ph"+(i.classList.contains("q")?" q":"");d.textContent=i.classList.contains("q")?"":"Add image: "+i.getAttribute("src");i.replaceWith(d)}));
 
 const ic={"index.html":"👋","about.html":"🙋","resume.html":"📄","goals.html":"🎯","projects.html":"🛠️","open-wake-switch.html":"💡","experience.html":"💼","skills.html":"⚙️","coursework.html":"📚","contact.html":"✉️"};
 const mn=document.querySelector("main"),cv=document.createElement("div"),ie=document.createElement("div");cv.className="cover";ie.className="icon";ie.setAttribute("aria-hidden","true");ie.textContent=ic[here]||"📁";mn.prepend(ie);mn.prepend(cv);
@@ -17,7 +18,7 @@ const ft=document.createElement("footer");ft.className="ft";ft.innerHTML='<b>kxn
 mn.id="main";const sk=document.createElement("a");sk.className="skip";sk.href="#main";sk.textContent="Skip to content";document.body.prepend(sk);
 
 const rt=document.documentElement;let th="light";try{th=localStorage.getItem("th")||"light"}catch(e){}
-const tg=document.createElement("button");tg.className="tg";
+const tg=document.createElement("button");tg.className="tg tgl";
 const setT=v=>{rt.dataset.theme=v;tg.textContent=v==="dark"?"Switch to light":"Switch to dark";tg.setAttribute("aria-pressed",v==="dark");try{localStorage.setItem("th",v)}catch(e){}};
 tg.onclick=()=>setT(rt.dataset.theme==="dark"?"light":"dark");nav.append(tg);setT(th);
 const pk=here.replace(".html","")||"index";
