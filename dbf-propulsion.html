@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Propeller Testing, Auburn DBF | Kanghyun Kim</title><link rel="stylesheet" href="style.css"></head><body><main>
+<span class="sticker">Team project</span>
+<h1>Propeller Testing for a Banner-Towing Plane</h1>
+<p class="meta">Auburn Design/Build/Fly | Propulsion team | Aug 2025 to May 2026</p>
+<figure><img src="images/dbf-aircraft.jpg" alt="Auburn DBF aircraft in flight"><figcaption>Auburn's Design/Build/Fly aircraft in flight</figcaption></figure>
+<h2>The problem</h2>
+<p>Auburn's Design/Build/Fly team built an electric RC plane that tows a large banner for the 2025–26 AIAA competition. The propulsion system had to fit a 100 Wh energy limit and still give enough thrust for turns and banner towing. Catalog data narrowed the choice to three APC propellers: 14×8.5E, 14×10E, and 15×8E. The propulsion team had to pick one using real measurements.</p>
+<h2>My role</h2>
+<p>I ran thrust-stand and dynamic thrust tests and built an Excel tool to compare the results. The test rig and the final decision were team efforts.</p>
+<h2>How we tested</h2>
+<h3>Static test</h3>
+<p>A modified Tyto Robotics thrust stand with load cells, an optical RPM sensor, and an ammeter measured thrust, torque, RPM, and current at 50%, 75%, and 100% throttle. Everyone wore protective equipment and stayed clear of the propeller arc.</p>
+<figure><video class="vid" controls playsinline preload="metadata" poster="images/static-thrust-poster.jpg"><source src="images/static-thrust.mp4" type="video/mp4"></video><figcaption>A static thrust test on the stand</figcaption></figure>
+<h3>Dynamic test</h3>
+<p>A plane in flight sees moving air, so we mounted the thrust stand on a 10 ft 2×4 on a car roof, which kept the propeller's airflow clear of the car's wake. We drove at 45, 55, and 65 mph and used the speedometer as the airspeed estimate. A steady headwind affected the runs, so each test was done in both directions and averaged.</p>
+<figure><img src="images/dbf-test.jpg" alt="Thrust stand on a 2x4 on the roof of a car"><figcaption>The dynamic thrust test setup</figcaption></figure>
+<h3>Battery test</h3>
+<p>With the static setup at 85% throttle, we measured how long the battery could hold thrust before it started to fade.</p>
+<h2>What the data shows</h2>
+<h3>Static thrust</h3>
+<div class="tw"><table><thead><tr><th>Throttle</th><th>Propeller</th><th>RPM</th><th>Thrust (lbf)</th><th>Torque (ft·lbf)</th><th>Current (A)</th></tr></thead><tbody><tr><td rowspan="3">50%</td><td>14×8.5E</td><td>5300</td><td>3.00</td><td>0.236</td><td>13.0</td></tr><tr><td>14×10E</td><td>5200</td><td>3.00</td><td>0.280</td><td>14.9</td></tr><tr><td>15×8E</td><td>5300</td><td>3.24</td><td>0.300</td><td>19.3</td></tr><tr><td rowspan="3">75%</td><td>14×8.5E</td><td>7600</td><td>6.39</td><td>0.580</td><td>38.7</td></tr><tr><td>14×10E</td><td>7400</td><td>6.08</td><td>0.630</td><td>42.9</td></tr><tr><td>15×8E</td><td>7500</td><td>7.23</td><td>0.680</td><td>43.1</td></tr><tr><td rowspan="3">100%</td><td>14×8.5E</td><td>8600</td><td>8.47</td><td>0.804</td><td>64.0</td></tr><tr><td>14×10E</td><td>8400</td><td>7.94</td><td>0.878</td><td>68.5</td></tr><tr><td>15×8E</td><td>8700</td><td>9.70</td><td>0.929</td><td>71.0</td></tr></tbody></table></div>
+<h3>Dynamic thrust</h3>
+<p class="meta">Average thrust in lbf, with downwind and upwind runs averaged.</p>
+<div class="tw"><table><thead><tr><th>Propeller</th><th>Throttle</th><th>45 mph (66 ft/s)</th><th>55 mph (81 ft/s)</th><th>65 mph (91 ft/s)</th></tr></thead><tbody><tr><td rowspan="2">14×8.5E</td><td>75%</td><td>6.997</td><td>5.896</td><td>4.243</td></tr><tr><td>100%</td><td>7.165</td><td>6.172</td><td>4.630</td></tr><tr><td rowspan="2">14×10E</td><td>75%</td><td>7.386</td><td>6.339</td><td>5.071</td></tr><tr><td>100%</td><td>7.717</td><td>6.669</td><td>5.456</td></tr><tr><td rowspan="2">15×8E</td><td>75%</td><td>7.551</td><td>6.285</td><td>4.354</td></tr><tr><td>100%</td><td>8.047</td><td>6.504</td><td>4.850</td></tr></tbody></table></div>
+<h3>Battery time</h3>
+<div class="tw"><table><thead><tr><th>Propeller</th><th>Battery time at 85% throttle</th></tr></thead><tbody><tr><td>14×8.5E</td><td>399 s</td></tr><tr><td>14×10E</td><td>375 s</td></tr><tr><td>15×8E</td><td>360 s</td></tr></tbody></table></div>
+<p>The 15×8E made the most static thrust: 9.70 lbf at 8,700 RPM, drawing 71 A. In moving air the picture changed. At 45 mph the 15×8E still led, but the 14×10E overtook it at roughly 76 ft/s (about 52 mph). At 65 mph and full throttle, the 14×10E made 5.5 lbf and the 15×8E made 4.9 lbf. The 15×8E also had the shortest battery time of the three.</p>
+<h2>The decision</h2>
+<p>The team chose the 15×8E. Turning and banner towing happen at lower airspeeds, where it makes the most thrust, and its strong static thrust helps takeoff and heavy loads. The cost was higher current draw and less flight time. The 14×10E would have suited fast, level cruising better.</p>
+<h2>What I took from it</h2>
+<p>The catalog numbers pointed to two good propellers, but only the tests showed where each one wins. I try to check a design against measurements before I trust it.</p>
+<p class="meta">Test data from the Auburn DBF 2025–26 design report.</p>
+</main><script src="script.js"></script></body></html>
